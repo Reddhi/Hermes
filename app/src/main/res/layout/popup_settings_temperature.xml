@@ -34,7 +34,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/colorGrayDark"
             android:textSize="12sp"
-            android:textAllCaps="true"/>
+            android:lines="2"/>
 
         <TextView
             android:id="@+id/current_temperature_value"
@@ -44,7 +44,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/acme"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textAllCaps="true"
             android:gravity="center"/>
     </LinearLayout>
@@ -65,7 +65,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/colorGrayDark"
             android:textSize="12sp"
-            android:textAllCaps="true"/>
+            android:lines="2"/>
 
         <Spinner
             android:id="@+id/temperature_spinner"
