@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class HistoryActivity extends AppCompatActivity {
 
     final String TAG = "Firebase";
-    private ArrayList<TemperatureData> temperatureHistory;
+    private ArrayList<SensorData> temperatureHistory;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
 
@@ -39,7 +39,7 @@ public class HistoryActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot historySnapshot) {
                 temperatureHistory = new ArrayList<>();
                 for (DataSnapshot dataSnapshot: historySnapshot.getChildren()) {
-                    TemperatureData data = dataSnapshot.getValue(TemperatureData.class);
+                    SensorData data = dataSnapshot.getValue(SensorData.class);
                     temperatureHistory.add(data);
                 }
                 mAdapter = new TemperatureDataAdapter(temperatureHistory);

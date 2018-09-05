@@ -1,11 +1,13 @@
 package org.gtre.itg.hermes;
 
-public class TemperatureData {
+public class SensorData {
 
     private double temperature;
+    private double pressure;
+    private double humidity;
     private String datetime;
 
-    public TemperatureData() {
+    public SensorData() {
     }
 
     public double getTemperature() {
@@ -14,6 +16,22 @@ public class TemperatureData {
 
     public void setTemperature(double temperature) {
         this.temperature = temperature;
+    }
+
+    public double getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(double pressure) {
+        this.pressure = pressure;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
     }
 
     public String getDatetime() {

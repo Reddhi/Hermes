@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Context mContext;
-    private TextView tempView, timeView;
+    private TextView tempView, presView, humView, timeView;
     private FirebaseDatabase mDatabase;
 
     @Override
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         tempView = findViewById(R.id.temperature_view);
+        presView = findViewById(R.id.pressure_view);
+        humView = findViewById(R.id.humidity_view);
         timeView = findViewById(R.id.timestamp_view);
         Button historyButton = findViewById(R.id.show_history_button);
         mDatabase = FirebaseDatabaseUtility.getDatabase();
@@ -49,13 +51,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    TemperatureData temp = snapshot.getValue(TemperatureData.class);
-                    DecimalFormat df = new DecimalFormat("00");
+                    SensorData sensorData = snapshot.getValue(SensorData.class);
+                    DecimalFormat df = new DecimalFormat("00.0");
                     df.setRoundingMode(RoundingMode.HALF_UP);
-                    if(temp!=null) {
-                        String temperatureText = df.format(temp.getTemperature()) + "\u00b0C";
+                    if(sensorData!=null) {
+                        String temperatureText = df.format(sensorData.getTemperature()) + "\u00b0C";
+                        String pressureText = "P: " + df.format(sensorData.getPressure())+ " mbar";
+                        String humidityText = "H: " + df.format(sensorData.getHumidity())+ "% RH";
                         tempView.setText(temperatureText);
-                        timeView.setText(temp.getDatetime());
+                        presView.setText(pressureText);
+                        humView.setText(humidityText);
+                        timeView.setText(sensorData.getDatetime());
                     }
                 }
             }

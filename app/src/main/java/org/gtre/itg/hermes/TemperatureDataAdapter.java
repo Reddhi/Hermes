@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class TemperatureDataAdapter  extends RecyclerView.Adapter<TemperatureDataAdapter.ViewHolder> {
-    private ArrayList<TemperatureData> mDataSet;
+    private ArrayList<SensorData> mDataSet;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView temperatureView;
@@ -25,7 +25,7 @@ public class TemperatureDataAdapter  extends RecyclerView.Adapter<TemperatureDat
         }
     }
 
-    TemperatureDataAdapter(ArrayList<TemperatureData> myDataSet) {
+    TemperatureDataAdapter(ArrayList<SensorData> myDataSet) {
         mDataSet = myDataSet;
     }
 

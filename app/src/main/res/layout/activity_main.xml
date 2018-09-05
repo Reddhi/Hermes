@@ -31,13 +31,44 @@
             android:gravity="center"
             android:textSize="120sp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/pressure_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/humidity_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/timestamp_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorGrayDark"
             android:textStyle="italic"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:fontFamily="@font/acme"/>
 
     </LinearLayout>
