@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@color/colorGrayLight"
+    android:elevation="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/settings_temperature"
+        android:textStyle="bold"
+        android:fontFamily="@font/acme"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="@string/current_temperature_threshold"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/colorGrayDark"
+            android:textSize="12sp"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/current_temperature_value"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textAllCaps="true"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="@string/select_temperature_threshold"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/colorGrayDark"
+            android:textSize="12sp"
+            android:textAllCaps="true"/>
+
+        <Spinner
+            android:id="@+id/temperature_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:spinnerMode="dialog"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/close_button"
+            android:layout_marginEnd="20dp"
+            android:text="@string/confirm"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"/>
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/close"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@color/colorGrayLight"
+    android:elevation="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/settings_database"
+        android:textStyle="bold"
+        android:fontFamily="@font/acme"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/clear_database_alert"
+        android:textStyle="bold"
+        android:fontFamily="@font/acme"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/close_button"
+            android:layout_marginEnd="20dp"
+            android:text="@string/confirm"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"/>
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/close"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:fontFamily="@font/acme"/>
+
+    </RelativeLayout>
+</LinearLayout>

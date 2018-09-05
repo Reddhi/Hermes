@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:orientation="vertical"
+    android:id="@+id/settings_parent_layout">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:id="@+id/toolbar_settings"
+        android:layout_alignParentTop="true"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:layout_centerInParent="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/settings_temperature"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="2dp"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:padding="25dp"
+                    android:text="@string/settings_temperature"
+                    android:gravity="center"
+                    android:fontFamily="@font/acme"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableTop="@drawable/ac_unit_primary"
+                    android:clickable="false"/>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/settings_file_path"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="2dp"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="25dp"
+                android:text="@string/settings_file_path"
+                android:gravity="center"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableTop="@drawable/folder_open_primary"
+                android:clickable="false"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/settings_database"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="2dp"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="25dp"
+                android:text="@string/settings_database"
+                android:gravity="center"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableTop="@drawable/delete_forever_primary"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/settings_notification"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="2dp"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="25dp"
+                android:text="@string/settings_notification"
+                android:gravity="center"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableTop="@drawable/notification_important_primary"/>
+
+        </android.support.v7.widget.CardView>
+    </GridLayout>
+</RelativeLayout>
