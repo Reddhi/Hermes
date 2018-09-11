@@ -37,7 +37,7 @@ public class TemperatureDataAdapter  extends RecyclerView.Adapter<TemperatureDat
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DecimalFormat df = new DecimalFormat("00");
+        DecimalFormat df = new DecimalFormat("00.0");
         df.setRoundingMode(RoundingMode.HALF_UP);
         String temperatureText = df.format(mDataSet.get(position).getTemperature())+"  \u00b0C";
         holder.temperatureView.setText(temperatureText);

@@ -11,6 +11,7 @@ import android.util.Log;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public class HistoryActivity extends AppCompatActivity {
         mLayoutManager.setStackFromEnd(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
         DatabaseReference myRef = FirebaseDatabaseUtility.getDatabase().getReference("data");
-        myRef.addValueEventListener(new ValueEventListener() {
+        Query historyQuery = myRef.orderByKey().limitToLast(60);
+        historyQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot historySnapshot) {
                 temperatureHistory = new ArrayList<>();
